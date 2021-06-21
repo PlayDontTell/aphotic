@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Cryopod/background.png" type="Texture" id=1]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Cryopod/light_source_1.png" type="Texture" id=2]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Cryopod/shade_1.png" type="Texture" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/ActionTrigger.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Cryopod/cryopod_door_right_back.png" type="Texture" id=6]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Cryopod/cryopod.gd" type="Script" id=7]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Cryopod/cryopod_door_left_back.png" type="Texture" id=8]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Cryopod/cryopod_trap_back.png" type="Texture" id=9]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
+
+[node name="cryopod" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="PassageRight" parent="Background" instance=ExtResource( 5 )]
+actionType = "go to"
+actionName = "go to the right"
+goToRoom = "flora"
+goToPosition = Vector2( 90, 121 )
+
+[node name="CollisionPolygon2D" parent="Background/PassageRight" index="0"]
+polygon = PoolVector2Array( 387, 166, 388, 124, 393, 121, 399, 123, 403, 174 )
+
+[node name="Sprite" type="Sprite" parent="Background/PassageRight" groups=[
+"highlight",
+]]
+position = Vector2( 392, 146 )
+texture = ExtResource( 6 )
+
+[node name="PassageLeft" parent="Background" instance=ExtResource( 5 )]
+position = Vector2( -306, 7 )
+actionType = "go to"
+flipH = true
+actionName = "go to the left"
+goToRoom = "quarters"
+goToPosition = Vector2( 350, 157 )
+
+[node name="CollisionPolygon2D" parent="Background/PassageLeft" index="0"]
+polygon = PoolVector2Array( 370, 181, 370, 123, 384, 112, 403, 113, 410, 162 )
+
+[node name="TargetPosition" parent="Background/PassageLeft" index="1"]
+position = Vector2( 398, 174 )
+
+[node name="Sprite" type="Sprite" parent="Background/PassageLeft" groups=[
+"highlight",
+]]
+position = Vector2( 392, 146 )
+texture = ExtResource( 8 )
+
+[node name="PassageBottom" parent="Background" instance=ExtResource( 5 )]
+position = Vector2( -219, 38 )
+actionType = "go to"
+flipH = true
+actionName = "go down the ladder"
+goToRoom = "maintenance"
+goToPosition = Vector2( 414, 155 )
+
+[node name="CollisionPolygon2D" parent="Background/PassageBottom" index="0"]
+polygon = PoolVector2Array( 376, 151, 386, 140, 408, 141, 400, 152 )
+
+[node name="TargetPosition" parent="Background/PassageBottom" index="1"]
+position = Vector2( 406, 148 )
+
+[node name="Sprite" type="Sprite" parent="Background/PassageBottom" groups=[
+"highlight",
+]]
+position = Vector2( 392, 146 )
+texture = ExtResource( 9 )
+
+[node name="Background" type="Sprite" parent="Background"]
+texture = ExtResource( 1 )
+offset = Vector2( 240, 135 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+character = "char_fancypants"
+
+[node name="AnimationTree" parent="Player" index="3"]
+parameters/playback = SubResource( 1 )
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Sprite" parent="Foreground"]
+offset = Vector2( 240, 135 )
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Main" type="Light2D" parent="Lighting"]
+texture = ExtResource( 3 )
+offset = Vector2( 240, 135 )
+color = Color( 0, 0, 0, 1 )
+energy = 0.9
+mode = 2
+
+[node name="LightSource1" type="Light2D" parent="Lighting"]
+texture = ExtResource( 2 )
+offset = Vector2( 240, 135 )
+color = Color( 1, 0.988235, 0.94902, 1 )
+
+[node name="LightSource3" type="Light2D" parent="Lighting"]
+visible = false
+texture = ExtResource( 3 )
+offset = Vector2( 240, 135 )
+color = Color( 0.345098, 0.345098, 0.67451, 1 )
+
+[node name="FloorPolygon" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PoolVector2Array( 61, 207, 64, 200, 64, 191, 109, 169, 114, 170, 168, 155, 168, 178, 157, 188, 183, 190, 189, 179, 168, 178, 168, 155, 202, 156, 202, 163, 238, 166, 236, 172, 237, 172, 242, 158, 263, 158, 268, 172, 269, 172, 267, 166, 288, 162, 288, 159, 311, 160, 313, 163, 344, 163, 372, 168, 379, 168, 402, 180, 403, 189, 418, 203, 385, 216, 214, 220 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[editable path="Background/PassageRight"]
+[editable path="Background/PassageLeft"]
+[editable path="Background/PassageBottom"]
+[editable path="Player"]

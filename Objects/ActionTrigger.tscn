@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Objects/ActionTrigger.gd" type="Script" id=1]
+
+[node name="ActionTrigger" type="Area2D" groups=[
+"action_trigger",
+]]
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+[node name="TargetPosition" type="Position2D" parent="."]
+position = Vector2( 383, 174 )
+
+[connection signal="area_entered" from="." to="." method="_on_ActionTrigger_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_ActionTrigger_area_exited"]

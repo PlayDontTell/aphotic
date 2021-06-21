@@ -1,0 +1,121 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Elevator/elevator.gd" type="Script" id=1]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Cryopod/light_source_1.png" type="Texture" id=2]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Cryopod/shade_1.png" type="Texture" id=3]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Elevator/background.png" type="Texture" id=4]
+[ext_resource path="res://Objects/BackZone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Elevator/Button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Elevator/button_2.png" type="Texture" id=7]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Elevator/button_3.png" type="Texture" id=8]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Elevator/button_1.png" type="Texture" id=9]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Elevator/button_3_back.png" type="Texture" id=10]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Elevator/button_1_back.png" type="Texture" id=11]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Elevator/button_2_back.png" type="Texture" id=12]
+
+[node name="elevator" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Background" type="Sprite" parent="Background"]
+texture = ExtResource( 4 )
+offset = Vector2( 240, 135 )
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Sprite" parent="Foreground"]
+offset = Vector2( 240, 135 )
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Main" type="Light2D" parent="Lighting"]
+texture = ExtResource( 3 )
+offset = Vector2( 240, 135 )
+color = Color( 0, 0, 0, 1 )
+energy = 0.9
+mode = 2
+
+[node name="LightSource1" type="Light2D" parent="Lighting"]
+texture = ExtResource( 2 )
+offset = Vector2( 240, 135 )
+color = Color( 1, 0.988235, 0.94902, 1 )
+
+[node name="LightSource3" type="Light2D" parent="Lighting"]
+visible = false
+texture = ExtResource( 3 )
+offset = Vector2( 240, 135 )
+color = Color( 0.345098, 0.345098, 0.67451, 1 )
+
+[node name="BackZone" parent="." instance=ExtResource( 5 )]
+visible = false
+goToRoom = "control"
+
+[node name="CollisionPolygon2D" parent="BackZone" index="0"]
+polygon = PoolVector2Array( 89, 35, 82, 0, 0, 0, 0, 270, 480, 270, 480, 0, 226, 0, 82, 0, 89, 35, 206, 38, 207, 218, 90, 214 )
+
+[node name="Button1" parent="." instance=ExtResource( 6 )]
+button_level = "control"
+
+[node name="CollisionPolygon2D" parent="Button1" index="0"]
+polygon = PoolVector2Array( 121, 70, 121, 94, 177, 98, 177, 73 )
+
+[node name="ButtonSprite" parent="Button1" index="1"]
+position = Vector2( 149, 84 )
+texture = ExtResource( 9 )
+vframes = 4
+
+[node name="ShadowSprite" parent="Button1" index="2"]
+position = Vector2( 149, 84 )
+texture = ExtResource( 11 )
+vframes = 4
+
+[node name="Button2" parent="." instance=ExtResource( 6 )]
+button_level = "defense"
+
+[node name="CollisionPolygon2D" parent="Button2" index="0"]
+polygon = PoolVector2Array( 126, 128, 124, 106, 178, 105, 179, 126 )
+
+[node name="ButtonSprite" parent="Button2" index="1"]
+position = Vector2( 152, 119 )
+texture = ExtResource( 7 )
+vframes = 4
+
+[node name="ShadowSprite" parent="Button2" index="2"]
+position = Vector2( 152, 119 )
+texture = ExtResource( 12 )
+vframes = 4
+
+[node name="Button3" parent="." instance=ExtResource( 6 )]
+button_level = "armoury"
+
+[node name="CollisionPolygon2D" parent="Button3" index="0"]
+polygon = PoolVector2Array( 124, 138, 125, 161, 175, 162, 177, 142 )
+
+[node name="ButtonSprite" parent="Button3" index="1"]
+position = Vector2( 150, 152 )
+texture = ExtResource( 8 )
+vframes = 4
+
+[node name="ShadowSprite" parent="Button3" index="2"]
+position = Vector2( 150, 152 )
+texture = ExtResource( 10 )
+vframes = 4
+
+[editable path="BackZone"]
+[editable path="Button1"]
+[editable path="Button2"]
+[editable path="Button3"]

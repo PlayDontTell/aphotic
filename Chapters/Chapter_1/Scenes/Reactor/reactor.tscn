@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Reactor/foreground.png" type="Texture" id=1]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Cryopod/light_source_1.png" type="Texture" id=2]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Cryopod/shade_1.png" type="Texture" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Reactor/reactor_back.png" type="Texture" id=5]
+[ext_resource path="res://Objects/ActionTrigger.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Reactor/reactor.gd" type="Script" id=7]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Reactor/background.png" type="Texture" id=8]
+
+[node name="reactor" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="PassageRight" parent="Background" instance=ExtResource( 6 )]
+position = Vector2( 308, 54 )
+actionType = "go to"
+flipH = true
+actionName = "go to the right"
+goToRoom = "maintenance"
+goToPosition = Vector2( 44, 109 )
+
+[node name="CollisionPolygon2D" parent="Background/PassageRight" index="0"]
+polygon = PoolVector2Array( 76, 102, 89, 109, 89, 63, 76, 61 )
+
+[node name="TargetPosition" parent="Background/PassageRight" index="1"]
+position = Vector2( 73, 106 )
+
+[node name="Sprite" type="Sprite" parent="Background/PassageRight" groups=[
+"highlight",
+]]
+position = Vector2( 82, 85 )
+texture = ExtResource( 5 )
+
+[node name="Background" type="Sprite" parent="Background"]
+texture = ExtResource( 8 )
+offset = Vector2( 240, 135 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+character = "char_fancypants"
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Sprite" parent="Foreground"]
+position = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+offset = Vector2( 240, 135 )
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Main" type="Light2D" parent="Lighting"]
+visible = false
+texture = ExtResource( 3 )
+offset = Vector2( 240, 135 )
+color = Color( 0, 0, 0, 1 )
+energy = 0.9
+mode = 2
+
+[node name="LightSource1" type="Light2D" parent="Lighting"]
+visible = false
+texture = ExtResource( 2 )
+offset = Vector2( 240, 135 )
+color = Color( 1, 0.988235, 0.94902, 1 )
+
+[node name="LightSource3" type="Light2D" parent="Lighting"]
+visible = false
+texture = ExtResource( 3 )
+offset = Vector2( 240, 135 )
+color = Color( 0.345098, 0.345098, 0.67451, 1 )
+
+[node name="FloorPolygon" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PoolVector2Array( 379, 156, 398, 166, 275, 145, 211, 146, 213, 129, 256, 129, 258, 131, 262, 131 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[editable path="Background/PassageRight"]

@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/button_2_back.png-b64507d2a0f2fd82e25c9a510f4d6e17.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Chapters/Chapter_1/Scenes/Elevator/button_2_back.png"
+dest_files=[ "res://.import/button_2_back.png-b64507d2a0f2fd82e25c9a510f4d6e17.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=2
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=false
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
