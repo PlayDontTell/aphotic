@@ -98,7 +98,7 @@ func go_to(	targetPos,
 		if $PlayerSprite.position == targetPos and actionName == lastAction:
 #			if actionType in ["go to", "idle"]:
 #				Data.data.player.position = $PlayerSprite.position
-			if not actionType in ["go to", "look"]:
+			if not actionType in ["go to", "look", "duck"]:
 				$AnimationTree["parameters/playback"].travel(actionType)
 			else:
 				chapter.change_room(goToRoom, goToPosition, flipH)

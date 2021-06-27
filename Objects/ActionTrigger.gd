@@ -1,12 +1,12 @@
 extends Node2D
 
 
-export(String, "idle", "go to", "pick", "look", "push", "crouch") var actionType
+export(String, "idle", "go to", "pick", "look", "push", "duck") var actionType
 export var flipH = false
 export var actionName: String
 export var goToRoom: String
 export var isInsertShot: bool
-export var goToPosition: Vector2
+export var goToPosition: String
 
 onready var targetPosition: Vector2 = $TargetPosition.position + position
 

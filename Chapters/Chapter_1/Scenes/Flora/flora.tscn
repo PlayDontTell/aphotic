@@ -31,7 +31,6 @@ actionType = "go to"
 flipH = true
 actionName = "go to the left"
 goToRoom = "cryopod"
-goToPosition = Vector2( 383, 174 )
 
 [node name="CollisionPolygon2D" parent="Background/PassageLeft" index="0"]
 polygon = PoolVector2Array( 76, 108, 88, 105, 88, 70, 84, 64, 79, 62, 77, 71 )
@@ -51,7 +50,6 @@ actionType = "go to"
 flipH = true
 actionName = "go to the right"
 goToRoom = "control"
-goToPosition = Vector2( 138, 167 )
 
 [node name="CollisionPolygon2D" parent="Background/PassageRight" index="0"]
 polygon = PoolVector2Array( 77, 102, 87, 108, 87, 70, 86, 62, 81, 62, 77, 67 )
@@ -71,7 +69,6 @@ actionType = "go to"
 flipH = true
 actionName = "go bottom"
 goToRoom = "science"
-goToPosition = Vector2( 285, 169 )
 
 [node name="CollisionPolygon2D" parent="Background/PassageBottom" index="0"]
 polygon = PoolVector2Array( 77, 111, 86, 102, 86, 63, 81, 59, 77, 74 )

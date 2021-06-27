@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Objects/ActionTrigger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Chapters/Chapter_1/Scenes/Control/control_elevator_cache.png" type="Texture" id=3]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Defense/defense_elevator_cache.png" type="Texture" id=3]
 [ext_resource path="res://Chapters/Chapter_1/Scenes/Elevator/mini_background.png" type="Texture" id=4]
 [ext_resource path="res://Chapters/Chapter_1/Scenes/Elevator/mini_foreground.png" type="Texture" id=5]
-[ext_resource path="res://Chapters/Chapter_1/Scenes/Control/background.png" type="Texture" id=6]
+[ext_resource path="res://Chapters/Chapter_1/Scenes/Defense/background.png" type="Texture" id=6]
 [ext_resource path="res://Chapters/Chapter_1/Scenes/Cryopod/shade_1.png" type="Texture" id=7]
 [ext_resource path="res://Chapters/Chapter_1/Scenes/Cryopod/light_source_1.png" type="Texture" id=8]
 [ext_resource path="res://Chapters/Chapter_1/Scenes/Defense/defense.gd" type="Script" id=9]
@@ -22,28 +22,26 @@ __meta__ = {
 }
 
 [node name="PassageLadder" parent="Background" instance=ExtResource( 1 )]
-position = Vector2( -212, -13 )
+position = Vector2( -212, -21 )
 actionType = "idle"
-actionName = "go in the elevator"
-goToRoom = "elevator"
-isInsertShot = true
+actionName = "climb the ladder"
 
 [node name="CollisionPolygon2D" parent="Background/PassageLadder" index="0"]
 polygon = PoolVector2Array( 385, 171, 401, 171, 402, 121, 381, 124 )
 disabled = true
 
 [node name="TargetPosition" parent="Background/PassageLadder" index="1"]
-position = Vector2( 393, 169 )
+position = Vector2( 393, 170 )
 
 [node name="Sprite" type="Sprite" parent="Background/PassageLadder" groups=[
 "highlight",
 ]]
-position = Vector2( 382, 121 )
+position = Vector2( 381, 123 )
 texture = ExtResource( 3 )
 centered = false
 
 [node name="PassageElevator" parent="Background" instance=ExtResource( 1 )]
-position = Vector2( -212, -13 )
+position = Vector2( -212, -21 )
 actionType = "look"
 actionName = "go in the elevator"
 goToRoom = "elevator"
@@ -53,7 +51,7 @@ isInsertShot = true
 polygon = PoolVector2Array( 384, 171, 401, 171, 401, 124, 384, 124 )
 
 [node name="TargetPosition" parent="Background/PassageElevator" index="1"]
-position = Vector2( 393, 170 )
+position = Vector2( 393, 168 )
 
 [node name="Back" type="Sprite" parent="Background/PassageElevator" groups=[
 "highlight",
@@ -118,7 +116,7 @@ color = Color( 0.345098, 0.345098, 0.67451, 1 )
 
 [node name="FloorPolygon" type="CollisionPolygon2D" parent="."]
 visible = false
-polygon = PoolVector2Array( 151, 159, 111, 180, 261, 180, 285, 195, 326, 195, 338, 191, 338, 188, 369, 181, 361, 171, 330, 168, 330, 170, 284, 172, 265, 162, 184, 161, 183, 153, 179, 153, 178, 161, 162, 161, 162, 159 )
+polygon = PoolVector2Array( 152, 148, 113, 187, 260, 189, 262, 168, 285, 195, 285, 216, 323, 216, 338, 208, 340, 202, 368, 189, 358, 169, 331, 167, 330, 170, 286, 169, 286, 185, 263, 159, 265, 149, 205, 148, 199, 153, 183, 152, 182, 145, 179, 145, 178, 152, 162, 152, 162, 148 )
 __meta__ = {
 "_edit_lock_": true
 }

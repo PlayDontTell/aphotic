@@ -10,6 +10,7 @@ const SCENES = {
 	"elevator": "res://Chapters/Chapter_1/Scenes/Elevator/elevator.tscn",
 	"science": "res://Chapters/Chapter_1/Scenes/Science/science.tscn",
 	"defense": "res://Chapters/Chapter_1/Scenes/Defense/defense.tscn",
+	"armoury": "res://Chapters/Chapter_1/Scenes/Armoury/armoury.tscn",
 }
 
 var data: = {
@@ -46,7 +47,7 @@ func change_room(room, requestedPosition = Data.data.player.position,
 		if requestedPosition == Vector2.ZERO:
 			player.get_node("PlayerSprite").position = Data.data.player.position
 		else:
-			player.get_node("PlayerSprite").position = requestedPosition
+			player.get_node("PlayerSprite").position = get_node(room).rdvPoints[requestedPosition]
 		player.get_node("PlayerSprite").flip_h = requestedFlipH
 
 

@@ -7,7 +7,7 @@ const CHAPTERS = {
 
 
 func _ready():
-	SaveSystem.load_file(1)
+	Data.load_file(1)
 	select_chapter(Data.data.player.chapter)
 
 

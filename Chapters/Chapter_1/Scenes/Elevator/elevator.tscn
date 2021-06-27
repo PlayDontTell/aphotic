@@ -69,6 +69,7 @@ polygon = PoolVector2Array( 89, 35, 82, 0, 0, 0, 0, 270, 480, 270, 480, 0, 226, 
 
 [node name="Button1" parent="." instance=ExtResource( 6 )]
 button_level = "control"
+goToPosition = Vector2( 181, 157 )
 
 [node name="CollisionPolygon2D" parent="Button1" index="0"]
 polygon = PoolVector2Array( 121, 70, 121, 94, 177, 98, 177, 73 )
@@ -85,6 +86,7 @@ vframes = 4
 
 [node name="Button2" parent="." instance=ExtResource( 6 )]
 button_level = "defense"
+goToPosition = Vector2( 181, 147 )
 
 [node name="CollisionPolygon2D" parent="Button2" index="0"]
 polygon = PoolVector2Array( 126, 128, 124, 106, 178, 105, 179, 126 )
@@ -101,6 +103,7 @@ vframes = 4
 
 [node name="Button3" parent="." instance=ExtResource( 6 )]
 button_level = "armoury"
+goToPosition = Vector2( 181, 151 )
 
 [node name="CollisionPolygon2D" parent="Button3" index="0"]
 polygon = PoolVector2Array( 124, 138, 125, 161, 175, 162, 177, 142 )

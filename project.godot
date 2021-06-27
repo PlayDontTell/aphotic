@@ -18,7 +18,6 @@ config/version="0.1.0"
 [autoload]
 
 Global="*res://Scripts/Global.gd"
-SaveSystem="*res://Scripts/SaveSystem.gd"
 Data="*res://Scripts/Data.gd"
 
 [display]
