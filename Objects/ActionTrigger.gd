@@ -5,8 +5,8 @@ export(String, "idle", "go to", "pick", "look", "push", "duck") var actionType
 export var flipH = false
 export var actionName: String
 export var goToRoom: String
-export var isInsertShot: bool
-export var goToPosition: String
+export var goToPosition: Vector2
+export var goToRdvPoint: String = "null"
 
 onready var targetPosition: Vector2 = $TargetPosition.position + position
 

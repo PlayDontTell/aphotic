@@ -25,8 +25,10 @@ __meta__ = {
 [node name="PassageLeft" parent="Background" instance=ExtResource( 5 )]
 position = Vector2( -260, -3 )
 actionType = "go to"
+flipH = true
 actionName = "go to the left"
 goToRoom = "flora"
+goToRdvPoint = "doorE"
 
 [node name="CollisionPolygon2D" parent="Background/PassageLeft" index="0"]
 polygon = PoolVector2Array( 387, 171, 396, 167, 396, 122, 394, 120, 389, 125, 387, 137 )
@@ -45,7 +47,6 @@ position = Vector2( -212, -13 )
 actionType = "idle"
 actionName = "go in the elevator"
 goToRoom = "elevator"
-isInsertShot = true
 
 [node name="CollisionPolygon2D" parent="Background/PassageLadder" index="0"]
 polygon = PoolVector2Array( 385, 171, 401, 171, 402, 121, 381, 124 )
@@ -66,7 +67,6 @@ position = Vector2( -212, -13 )
 actionType = "look"
 actionName = "go in the elevator"
 goToRoom = "elevator"
-isInsertShot = true
 
 [node name="CollisionPolygon2D" parent="Background/PassageElevator" index="0"]
 polygon = PoolVector2Array( 384, 171, 401, 171, 401, 124, 384, 124 )

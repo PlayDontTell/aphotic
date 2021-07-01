@@ -36,8 +36,8 @@ func _input(event):
 					i.actionName,
 					i.flipH,
 					i.goToRoom,
-					i.isInsertShot,
-					i.goToPosition])
+					i.goToPosition,
+					i.goToRdvPoint])
 					return
 				if i.is_in_group("backzone"):
 					emit_signal("request_room_change", i.goToRoom)

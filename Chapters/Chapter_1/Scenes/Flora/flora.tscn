@@ -31,6 +31,7 @@ actionType = "go to"
 flipH = true
 actionName = "go to the left"
 goToRoom = "cryopod"
+goToRdvPoint = "doorE"
 
 [node name="CollisionPolygon2D" parent="Background/PassageLeft" index="0"]
 polygon = PoolVector2Array( 76, 108, 88, 105, 88, 70, 84, 64, 79, 62, 77, 71 )
@@ -47,9 +48,9 @@ texture = ExtResource( 8 )
 [node name="PassageRight" parent="Background" instance=ExtResource( 6 )]
 position = Vector2( 315, 55 )
 actionType = "go to"
-flipH = true
 actionName = "go to the right"
 goToRoom = "control"
+goToRdvPoint = "doorW"
 
 [node name="CollisionPolygon2D" parent="Background/PassageRight" index="0"]
 polygon = PoolVector2Array( 77, 102, 87, 108, 87, 70, 86, 62, 81, 62, 77, 67 )
@@ -69,6 +70,7 @@ actionType = "go to"
 flipH = true
 actionName = "go bottom"
 goToRoom = "science"
+goToRdvPoint = "doorE"
 
 [node name="CollisionPolygon2D" parent="Background/PassageBottom" index="0"]
 polygon = PoolVector2Array( 77, 111, 86, 102, 86, 63, 81, 59, 77, 74 )

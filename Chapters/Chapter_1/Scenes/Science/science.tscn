@@ -24,7 +24,7 @@ position = Vector2( -91, -1 )
 actionType = "go to"
 actionName = "go to the right"
 goToRoom = "flora"
-goToPosition = Vector2( 144, 213 )
+goToRdvPoint = "doorSW"
 
 [node name="CollisionPolygon2D" parent="Background/PassageRight" index="0"]
 polygon = PoolVector2Array( 379, 162, 379, 126, 382, 121, 385, 123, 388, 136, 388, 171 )

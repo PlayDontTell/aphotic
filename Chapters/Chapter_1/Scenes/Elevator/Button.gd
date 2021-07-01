@@ -7,7 +7,7 @@ var frame_offset: int = 0
 var focus_offset: int = 0
 
 export var flipH = false
-export var goToPosition: Vector2
+export var requestedRdvPoint: String
 
 
 func _ready():
@@ -24,7 +24,7 @@ func _on_Button_input_event(_viewport, event, _shape_idx):
 				else:
 					focus_offset = 0
 					initialize()
-					elevator.animate_elevator_travel(button_level, goToPosition, flipH)
+					elevator.animate_elevator_travel(button_level, flipH)
 	else:
 		focus_offset = 0
 		initialize()

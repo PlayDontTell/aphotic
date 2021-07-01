@@ -45,7 +45,6 @@ position = Vector2( -212, -21 )
 actionType = "look"
 actionName = "go in the elevator"
 goToRoom = "elevator"
-isInsertShot = true
 
 [node name="CollisionPolygon2D" parent="Background/PassageElevator" index="0"]
 polygon = PoolVector2Array( 384, 171, 401, 171, 401, 124, 384, 124 )

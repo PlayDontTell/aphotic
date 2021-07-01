@@ -12,11 +12,11 @@ func get_floor_meshes():
 	return [$FloorPolygon]
 
 
-func command(floor_name, requestedPosition, requestedFlipH):
+func command(floor_name, requestedFlipH):
 	Data.data.chapter_1.elevator_floor = floor_name
-	chapter.change_room(floor_name, requestedPosition, requestedFlipH)
+	chapter.change_room(floor_name, Vector2.ZERO, "elevator", requestedFlipH)
 
 
-func animate_elevator_travel(floor_name, requestedPosition, requestedFlipH):
+func animate_elevator_travel(floor_name, requestedFlipH):
 	# Actions before elevator travel
-	command(floor_name, requestedPosition, requestedFlipH)
+	command(floor_name, requestedFlipH)

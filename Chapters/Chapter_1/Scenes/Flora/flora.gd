@@ -2,7 +2,9 @@ extends Node2D
 
 
 onready var rdvPoints: = {
-	"doorE": $Background/PassageRight.targetPosition
+	"doorE": $Background/PassageRight.targetPosition,
+	"doorW": $Background/PassageLeft.targetPosition,
+	"doorSW": $Background/PassageBottom.targetPosition,
 }
 
 

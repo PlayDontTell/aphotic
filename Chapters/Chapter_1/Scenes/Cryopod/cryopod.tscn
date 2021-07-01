@@ -25,7 +25,7 @@ __meta__ = {
 actionType = "go to"
 actionName = "go to the right"
 goToRoom = "flora"
-goToPosition = Vector2( 90, 121 )
+goToRdvPoint = "doorW"
 
 [node name="CollisionPolygon2D" parent="Background/PassageRight" index="0"]
 polygon = PoolVector2Array( 387, 166, 388, 124, 393, 121, 399, 123, 403, 174 )
@@ -42,7 +42,7 @@ actionType = "go to"
 flipH = true
 actionName = "go to the left"
 goToRoom = "quarters"
-goToPosition = Vector2( 350, 157 )
+goToRdvPoint = "doorE"
 
 [node name="CollisionPolygon2D" parent="Background/PassageLeft" index="0"]
 polygon = PoolVector2Array( 370, 181, 370, 123, 384, 112, 403, 113, 410, 162 )
@@ -62,7 +62,7 @@ actionType = "go to"
 flipH = true
 actionName = "go down the ladder"
 goToRoom = "maintenance"
-goToPosition = Vector2( 414, 155 )
+goToRdvPoint = "doorE"
 
 [node name="CollisionPolygon2D" parent="Background/PassageBottom" index="0"]
 polygon = PoolVector2Array( 376, 151, 386, 140, 408, 141, 400, 152 )

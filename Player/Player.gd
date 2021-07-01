@@ -57,8 +57,8 @@ func go_to(	targetPos,
 			actionName = lastAction,
 			flipH = true,
 			goToRoom = "",
-			isInsertShot = false,
-			goToPosition = Vector2.ZERO):
+			goToPosition = Vector2.ZERO,
+			goToRdvPoint = ""):
 	if char_data.properties.walk_speed != 0:
 		# Def  of the current and target positions.
 		var currentPos = $PlayerSprite.position
@@ -101,4 +101,4 @@ func go_to(	targetPos,
 			if not actionType in ["go to", "look", "duck"]:
 				$AnimationTree["parameters/playback"].travel(actionType)
 			else:
-				chapter.change_room(goToRoom, goToPosition, flipH)
+				chapter.change_room(goToRoom, goToPosition, goToRdvPoint, flipH)
